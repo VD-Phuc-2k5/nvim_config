@@ -15,7 +15,7 @@ return {
         opts = {
             auto_install = true,
             -- manually install packages that do not exist in this list please
-            ensure_installed = { "zls", "ts_ls", "gopls", "cssls", "angularls" },
+            ensure_installed = { "zls", "ts_ls", "gopls", "cssls", "angularls", "somesass_ls" },
         },
     },
     {
@@ -174,6 +174,12 @@ return {
                 capabilities = capabilities,
             }
 
+            -- sass / scss
+            vim.lsp.config["somesass_ls"] = {
+                capabilities = capabilities,
+                filetypes = { "scss", "sass", "css" },
+            }
+
             -- angular (only attaches in projects with angular.json)
             vim.lsp.config["angularls"] = {
                 capabilities = capabilities,
@@ -230,6 +236,7 @@ return {
                 "cobol_ls",
                 "svelte",
                 "cssls",
+                "somesass_ls",
                 "angularls",
                 "pylsp",
                 "bashls",
