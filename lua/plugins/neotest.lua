@@ -47,19 +47,13 @@ return {
 				},
 			})
 
-			vim.keymap.set("n", "<Leader>tr", ':lua require("neotest").run.run()<CR>', {})
-			-- run with debugging, need debug point
-			vim.keymap.set("n", "<Leader>tb", ':lua require("neotest").run.run({strategy = "dap"})<CR>', {})
-            -- stop running test
-			vim.keymap.set("n", "<Leader>ts", ':lua require("neotest").run.stop()<CR>', {})
-            -- open dialog 
-			vim.keymap.set("n", "<Leader>to", ':lua require("neotest").output.open()<CR>', {})
-			-- open and jump in to the dialog
-			vim.keymap.set("n", "<Leader>tO", ':lua require("neotest").output.open({ enter = true })<CR>', {})
-            -- view test summary
-			vim.keymap.set("n", "<Leader>tv", ':lua require("neotest").summary.toggle()<CR>', {})
-            -- run all test in file
-			vim.keymap.set("n", "<Leader>tp", ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', {})
+			vim.keymap.set("n", "<Leader>tr", ':lua require("neotest").run.run()<CR>', { desc = "Run nearest test" })
+			vim.keymap.set("n", "<Leader>tb", ':lua require("neotest").run.run({strategy = "dap"})<CR>', { desc = "Debug nearest test" })
+			vim.keymap.set("n", "<Leader>ts", ':lua require("neotest").run.stop()<CR>', { desc = "Stop test" })
+			vim.keymap.set("n", "<Leader>to", ':lua require("neotest").output.open()<CR>', { desc = "Open test output" })
+			vim.keymap.set("n", "<Leader>tO", ':lua require("neotest").output.open({ enter = true })<CR>', { desc = "Open and enter test output" })
+			vim.keymap.set("n", "<Leader>tv", ':lua require("neotest").summary.toggle()<CR>', { desc = "Toggle test summary" })
+			vim.keymap.set("n", "<Leader>tp", ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', { desc = "Run all tests in file" })
 
             -- this is only for test suite in go, I really hate this. 
             -- Will remove after !!!

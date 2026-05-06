@@ -8,6 +8,6 @@ return {
             },
         })
     end,
-    vim.keymap.set("n", "<leader>gb", ":Gitsigns blame_line<CR>"),
-       vim.keymap.set("n", "<leader>gp", ":Gitsigns toggle_current_line_blame<CR>")
+    vim.keymap.set("n", "<leader>gb", ":Gitsigns blame_line<CR>", { desc = "Blame line" }),
+       vim.keymap.set("n", "<leader>gp", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle line blame" })
 }

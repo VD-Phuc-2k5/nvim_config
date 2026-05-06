@@ -9,14 +9,25 @@ return {
         local wk = require("which-key")
         wk.setup(opts)
         wk.add({
+            -- git
             { "<leader>g",  group = "git" },
-            { "<leader>gf", desc = "format file" },
+            { "<leader>h",  group = "hunks" },
+            -- refactor
             { "<leader>r",  group = "refactor" },
-            { "<leader>rn", desc = "rename symbol" },
+            -- code / lsp
             { "<leader>c",  group = "code" },
-            { "<leader>ca", desc = "code action" },
+            -- find / symbols
             { "<leader>f",  group = "find / symbols" },
-            { "<leader>fm", desc = "document symbols" },
+            -- view / files
+            { "<leader>v",  group = "view / files" },
+            -- debug
+            { "<leader>d",  group = "debug / db" },
+            -- test
+            { "<leader>t",  group = "test" },
+            -- undo
+            { "<leader>u",  group = "undo" },
+            -- go-to (LSP navigation, no leader)
+            { "g",          group = "go to" },
         })
     end,
 }

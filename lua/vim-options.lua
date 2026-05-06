@@ -12,10 +12,10 @@ vim.api.nvim_set_option("clipboard", "unnamed")
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 -- move selected lines
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 -- paste over highlight word
-vim.keymap.set("x", "<leader>p", '"_dP')
+vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste over selection (no yank)" })
 vim.opt.colorcolumn = "80"
 vim.opt.clipboard = "unnamedplus"
 -- wrap text
