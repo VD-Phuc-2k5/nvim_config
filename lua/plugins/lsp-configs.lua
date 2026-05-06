@@ -63,6 +63,19 @@ return {
 
             vim.lsp.config["tailwindcss"] = {
                 capabilities = capabilities,
+                filetypes = { "html", "css", "scss", "typescript" },
+                root_markers = { "tailwind.config.js", "tailwind.config.ts", "tailwind.config.cjs" },
+                settings = {
+                    tailwindCSS = {
+                        classAttributes = { "class", "className", "ngClass" },
+                        experimental = {
+                            classRegex = {
+                                { "ngClass\\s*=\\s*[\"']([^\"']*)[\"']", "([\\w-]+)" },
+                                { "ngClass\\s*=\\s*\\{([^}]*)\\}", "[\"']([\\w-]+)[\"']" },
+                            },
+                        },
+                    },
+                },
             }
 
             vim.lsp.config["gopls"] = {

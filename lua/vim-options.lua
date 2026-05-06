@@ -24,6 +24,12 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 -- vim.opt.breakindent = true
 -- vim.opt.showbreak = "↳\\"
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+    end,
+})
+
 -- fk llm-ls
 local notify_original = vim.notify
 vim.notify = function(msg, ...)
