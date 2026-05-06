@@ -23,6 +23,7 @@ return {
                 "scss",
             },
             highlight = { enable = true },
+            indent = { enable = true },
         })
 
         -- Enable highlight tự động cho tất cả filetype
